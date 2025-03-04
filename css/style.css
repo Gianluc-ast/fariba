@@ -82,6 +82,7 @@ a{
 
 
 /*** Navbar ***/
+/*** Navbar ***/
 
 .navbar{
     height: 90px;
@@ -107,7 +108,7 @@ a{
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--primary); /* Asegúrate de que use la misma variable que el activo */
 }
 
 .navbar .dropdown-toggle::after {
@@ -147,7 +148,7 @@ a{
         margin-top: -125px;
         height: auto;
         width: auto;
-        }
+    }
 
     .navbar-collapse {
         background-color: white; /* Fondo blanco cuando se despliega */
@@ -167,16 +168,15 @@ a{
         padding: 10px;
     }
 
+    .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link.active {
-        color: var(--bs-primary) !important; /* Aplica color primario al activo */
+        color: var(--bs-primary) !important; /* Aplica color primario al hover y activo en móvil */
     }
 
     .navbar-nav .nav-item .dropdown-menu {
         background-color: white; /* Evita que el dropdown tenga otro color */
         border-radius: 0;
     }
-
-    
 }
 
 
@@ -194,6 +194,21 @@ a{
     z-index: 1;
 }
 
+.carousel-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Envía el video al fondo */
+}
+
+.carousel-caption {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté sobre el video */
+}
+
 .carousel-control-prev,
 .carousel-control-next {
     width: 15%;
@@ -208,6 +223,11 @@ a{
     border-radius: 50px;
 }
 
+.texto-hero{
+    color:#fd8b0f !important;
+    z-index: 2;
+}
+
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
@@ -219,6 +239,10 @@ a{
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .carousel-item video {
+        min-height: 450px;
     }
 }
 
@@ -234,12 +258,17 @@ a{
 
 .page-header .breadcrumb-item a,
 .page-header .breadcrumb-item+.breadcrumb-item::before {
-    color: #696E77;
+    color: #fd8b0f;
 }
 
 .page-header .breadcrumb-item a:hover,
 .page-header .breadcrumb-item.active {
     color: var(--primary);
+}
+
+.ruskaLetras{
+    height: auto;
+    width: auto;
 }
 
 
