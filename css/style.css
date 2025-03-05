@@ -4,6 +4,7 @@
     --secondary: #0DD3F1;
     --light: #F6F7FC;
     --dark: #15233C;
+    --third:#fd8b0f;
 }
 
 .back-to-top {
@@ -272,65 +273,14 @@ a{
 }
 
 
-/*** Facts ***/
-@media (min-width: 992px) {
-    .container.facts {
-        max-width: 100% !important;
-    }
-
-    .container.facts .facts-text {
-        padding-left: calc(((100% - 960px) / 2) + .75rem);
-    }
-
-    .container.facts .facts-counter {
-        padding-right: calc(((100% - 960px) / 2) + .75rem);
-    }
-}
-
-@media (min-width: 1200px) {
-    .container.facts .facts-text  {
-        padding-left: calc(((100% - 1140px) / 2) + .75rem);
-    }
-
-    .container.facts .facts-counter  {
-        padding-right: calc(((100% - 1140px) / 2) + .75rem);
-    }
-}
-
-@media (min-width: 1400px) {
-    .container.facts .facts-text  {
-        padding-left: calc(((100% - 1320px) / 2) + .75rem);
-    }
-
-    .container.facts .facts-counter  {
-        padding-right: calc(((100% - 1320px) / 2) + .75rem);
-    }
-}
-
-.container.facts .facts-text {
-    background: linear-gradient(rgba(1, 95, 201, .9), rgba(1, 95, 201, .9)), url(../img/carousel-1.jpg) center right no-repeat;
-    background-size: cover;
-}
-
-.container.facts .facts-counter {
-    background: linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), url(../img/carousel-2.jpg) center right no-repeat;
-    background-size: cover;
-}
-
-.container.facts .facts-text .h-100,
-.container.facts .facts-counter .h-100 {
-    padding: 6rem 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 
 /*** Service ***/
 .service-item {
     position: relative;
     overflow: hidden;
     box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .service-item .service-icon {
@@ -357,6 +307,346 @@ a{
 }
 
 
+/*** Logos ***/
+
+.slider-container-logos {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.logos {
+    display: inline-flex;
+    animation: scroll 30s linear infinite;
+    min-width: 200%;
+}
+
+.logos img {
+    height: 150px;
+    width: 150px;
+    margin: 0 15px;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(5%);
+    }
+    to {
+        transform: translateX(-30%);
+    }
+}
+
+/* Insurance section */
+.insurance-section {
+    background-color: var(--primary); /* Blue background from the image */
+    padding: 50px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white line at the bottom */
+    animation: fadeInUp 1s ease-out forwards; /* Animation added */
+}
+
+.h1-stats {
+    font-size: 42px; /* Larger title as in the image */
+    color: white;
+    text-align: center;
+    margin-bottom: 40px; /* More space before cards */
+    animation: fadeInUp 2s ease-out forwards; /* Animation added */
+    animation-delay: 0.6s; /* Slight delay for staggered effect */
+}
+
+/* Add "View All Services" link styling */
+.insurance-section a.view-all {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    margin-top: 20px; /* Space above the link */
+    display: inline-block; /* Ensure it behaves as a block element for centering */
+    animation: fadeInUp 2s ease-out forwards; /* Animation added */
+    animation-delay: 0.9s; /* Delay for staggered effect */
+}
+
+.insurance-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Reduced gap to match the image */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    padding: 20px; /* Adjusted padding to match the image */
+    width: 480px; /* Matches the card width in the image */
+    height: 440px; /* Matches the card height in the image */
+    text-align: left; /* Changed to left-align text */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: block; /* Remove flex to use normal flow for positioning */
+    position: relative; /* Enable positioning for child elements */
+    animation: fadeInUp 2s ease-out forwards; /* Animation added */
+    animation-delay: 0.8s; /* Delay for staggered effect */
+}
+
+.card img {
+    width: 50px; /* Larger icons as in the first image */
+    height: 50px;
+    margin-bottom: 10px; /* Reduced space below icon */
+    float: left; /* Position logo in top-left corner */
+}
+
+.card h2 {
+    font-size: 20px; /* Smaller title as in the first image */
+    font-weight: bold;
+    margin-bottom: 30px; /* Reduced space below title */
+    line-height: 1.2; /* Improve readability */
+    position: absolute; /* Position title at the bottom */
+    bottom: 140px; /* Distance from the bottom of the card */
+    left: 20px; /* Align with the left padding */
+}
+
+.card p {
+    font-size: 16px; /* Larger description as in the first image */
+    margin: 10px 0; 
+    margin-right: 10px;/* Reduced margin for description */
+    line-height: 1.4; /* Improve readability */
+    position: absolute; /* Position description at the bottom */
+    bottom: 70px; /* Distance from the bottom, above the title */
+    left: 20px; /* Align with the left padding */
+}
+
+.card a {
+    font-size: 16px; /* Larger link text as in the first image */
+    color: var(--primary); /* Blue link color, matching the design */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px; /* Space above link */
+    position: absolute; /* Position link at the bottom */
+    bottom: 20px; /* Distance from the bottom, below the title */
+    left: 20px; /* Align with the left padding */
+}
+
+/* Stats section */
+.stats-section {
+    background-color: var(--primary); /* Blue background from the image */
+    padding: 40px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.h2-stats-card {
+    font-size: 35px; /* Matches the image */
+    color: var(--primary);
+    text-align: left;
+    flex: 1;
+    margin-right: 40px; /* Space between title and stats */
+    padding-left: 0; /* Added padding to move text away from the left edge */
+}
+
+.h2-stats{
+    font: 35px;
+    color: #FFFFFF;
+    text-align: left;
+    flex:1;
+    margin-right: 40px;
+    padding-left: 60px;
+}
+.h3-stats{
+    color: #FFFFFF;
+    font-size: 40px;
+}
+
+.stats {
+    display: flex;
+    gap: 50px; /* Maintain spacing between stats */
+    flex: 1;
+    justify-content: center;
+    color: #fff;
+}
+
+.stat {
+    text-align: center;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px); /* Start 20px below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+/***QUOTE SECTION ***/
+.quote-section {
+    max-width: 1600px;
+    margin-top: 100px;
+    padding: 40px 20px; /* Increased padding for a taller section */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top for taller layout */
+    gap: 130px; /* Increased gap for more spacing, matching image */
+    background-color: #ffffff; /* White background, matching image */
+    min-height: 700px; /* Ensures the section is taller, matching image height */
+}
+
+.quote-content {
+    flex: 1;
+    text-align: left;
+}
+
+.quote-label {
+    color: var(--primary); /* Blue color for "COTIZA EN MINUTOS" label, matches image */
+    font-size: 24px; /* Slightly larger to match image */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px; /* More space below label, matching image */
+    display: block;
+}
+
+.quote-content h1 {
+    font-size: 56px; /* Large title to match the image */
+    color: black;
+    padding-right: 80px;
+    margin-bottom: 50px; /* More space before button, matching image */
+    line-height: 1.2; /* Tighter line height for bold look */
+    font-weight: bold; /* Bold font for emphasis */
+    max-width: 700px; /* Limits width to match image */
+}
+
+.quote-button {
+    background-color: #ff8c00; /* Orange button color, matches image */
+    color: white;
+    border: none;
+    padding: 18px 50px; /* Larger padding for bigger button, matching image */
+    font-size: 20px; /* Larger text for button, matching image */
+    font-weight: bold;
+    border-radius: 10px; /* More rounded corners, matching image */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3); /* Subtle orange shadow for depth */
+}
+
+.quote-button:hover {
+    background-color: #e67e00; /* Darker orange on hover, matches image */
+}
+
+.steps-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Increased gap between steps for taller layout */
+    padding-top: 10px; /* Adds space at the top of steps */
+    padding-right: 60px;
+}
+
+.step {
+    border: none; /* Remove borders to eliminate boxes */
+    padding: 0; /* Remove padding to align with lines only */
+    background-color: transparent; /* No background color for steps */
+}
+
+.step-number {
+    color: black; /* Gray number color, matches image */
+    font-size: 28px; /* Matches image */
+    font-weight: bold;
+    margin-right: 15px; /* More space before text, matching image */
+    vertical-align: middle;
+    display: inline-block; /* Ensure inline alignment */
+}
+
+.step h2 {
+    font-size: 28px; /* Larger title for steps, matching image */
+    color: black; /* Dark gray for titles, matches image */
+    margin-bottom: 8px;
+    display: inline-block; /* Ensure inline alignment */
+    vertical-align: middle;
+    font-weight: bold; /* Bold for emphasis */
+}
+
+.step p {
+    font-size: 20px; /* Matches image */
+    color: #666; /* Gray text for descriptions, matches image */
+    line-height: 1.6;
+    margin-left: 39px; /* Aligns text with step numbers, matching image */
+}
+
+/* Línea encima del primer paso */
+.steps-list::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-bottom: 0%;
+}
+
+/* Línea debajo del último paso */
+.steps-list::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-top: 0;
+}
+
+
+/* Add horizontal lines between steps */
+.step:not(:last-child)::after {
+    content: '';
+    display: block;
+    height: 1px; /* Thin line */
+    background-color: #e0e0e0; /* Light gray line, matches image */
+    margin-top: 15px; /* Space above line */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .quote-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 10px; /* Adjusted padding for mobile */
+        gap: 40px; /* Reduced gap on mobile */
+        min-height: auto; /* Remove min-height on mobile for flexibility */
+    }
+
+    .quote-content, .steps-list {
+        flex: none;
+        width: 100%;
+    }
+
+    .quote-content h1 {
+        font-size: 32px; /* Smaller title on mobile */
+        max-width: 100%; /* Full width on mobile */
+        margin-bottom: 30px; /* Reduced margin on mobile */
+    }
+
+    .quote-button {
+        padding: 12px 30px; /* Smaller button on mobile */
+        font-size: 16px;
+    }
+
+    .steps-list {
+        margin-top: 30px;
+        gap: 30px; /* Reduced gap between steps on mobile */
+    }
+
+    .step p {
+        margin-left: 0; /* Remove left margin on mobile for centering */
+        text-align: left; /* Keep left-aligned for readability */
+    }
+
+    .step:not(:last-child)::after {
+        margin-top: 15px; /* Reduced line spacing on mobile */
+    }
+}
 /*** Appointment ***/
 .appointment {
     background: linear-gradient(rgba(1, 95, 201, .9), rgba(1, 95, 201, .9)), url(../img/carousel-1.jpg) center center no-repeat;
@@ -482,55 +772,107 @@ a{
 
 /*** Footer ***/
 .footer {
-    color: #A7A8B4;
+    width: 100%;
+    color: #FFFFFF;
+    background-color: var(--primary);
+    padding: 50px 0;
 }
 
+.footer .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly; /* Distribuye los tres sectores equitativamente */
+    align-items: flex-start; /* Asegura que todo esté alineado arriba */
+    padding: 0 5%;
+}
+
+/* Reducir el tamaño del logo de Ruska */
+.footer .logo {
+    max-width: 100%; /* Ajustar tamaño del logo */
+    height: 150px;
+}
+
+/* Cada columna ocupa un tercio del espacio */
+.footer .col-lg-3 {
+    flex: 1;
+    width: 100%;
+    text-align: left;
+    padding: 0 20px;
+    margin: 0 120px;
+}
+
+/* Ajuste de alineación de textos */
+.footer h5 {
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer .btn.btn-link {
+    color: #FFFFFF;
+    margin: 5px 0;
+}
+
+/* Ajuste para enlaces */
 .footer .btn.btn-link {
     display: block;
-    margin-bottom: 5px;
     padding: 0;
     text-align: left;
-    color: #A7A8B4;
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
 }
 
 .footer .btn.btn-link::before {
-    position: relative;
     content: "\f105";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    color: #A7A8B4;
+    color: #FFFFFF;
     margin-right: 10px;
 }
 
 .footer .btn.btn-link:hover {
     color: var(--light);
     letter-spacing: 1px;
-    box-shadow: none;
 }
 
-.footer .btn.btn-square {
-    color: #A7A8B4;
-    border: 1px solid#A7A8B4;
-}
-
-.footer .btn.btn-square:hover {
-    color: var(--secondary);
-    border-color: var(--light);
-}
-
+/* Asegurar que el texto de copyright ocupe todo el ancho */
 .footer .copyright {
-    padding: 25px 0;
+    width: 100%;
+    padding: 20px 0;
     font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+    border-top: 1px solid rgba(256, 256, 256, .2);
+    text-align: left;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: start;
 }
 
+/* Enlaces de copyright */
 .footer .copyright a {
-    color: var(--secondary);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .footer .copyright a:hover {
-    color: #FFFFFF;
+    color: var(--secondary);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer .col-lg-3 {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .footer .copyright {
+        text-align: center;
+        flex-direction: column;
+    }
 }
