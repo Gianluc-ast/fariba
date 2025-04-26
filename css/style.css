@@ -1,10 +1,10 @@
 /********** Template CSS **********/
 :root {
-    --primary: #0773fa;
-    --secondary: #0DD3F1;
+    --primary: #15233C;
+    --secondary: #1C428B;
     --light: #F6F7FC;
-    --dark: #15233C;
-    --third:#fd8b0f;
+    --dark: #E11631;
+    --third:#A20F30;
 }
 
 .back-to-top {
@@ -82,34 +82,35 @@ a{
 }
 
 
-/*** Navbar ***/
+
 /*** Navbar ***/
 
-.navbar{
+.navbar {
     height: 90px;
 }
+
 .navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
+    top: 0; /* Changed from -100px to ensure sticky behavior starts at top */
+    transition: 0.5s;
 }
 
 .navbar .navbar-brand img {
-    max-height: 350px;
-    margin-top: 10px;
+    max-height: 120px;
+    margin-top: 0; /* Removed unnecessary margin */
     padding-right: 30px;
 }
 
 .navbar .navbar-nav .nav-link {
     margin-left: 25px;
     padding: 10px 0;
-    color: #696E77;
+    color: #696e77;
     font-weight: 500;
     outline: none;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--primary); /* Asegúrate de que use la misma variable que el activo */
+    color: var(--primary); /* Ensure --primary is defined, e.g., in a root variable */
 }
 
 .navbar .dropdown-toggle::after {
@@ -123,14 +124,14 @@ a{
 
 @media (max-width: 991.98px) {
     .navbar {
-        height: 80px; /* Permite que crezca en móviles */
+        height: 80px;
         padding: 0 10px;
         display: flex;
-        align-items: center;
+        align-itemsholding: center;
         position: sticky;
     }
 
-    .navbar .navbar-brand{
+    .navbar .navbar-brand {
         height: 100%;
         display: flex;
         align-items: center;
@@ -138,44 +139,42 @@ a{
     }
 
     .navbar .navbar-brand img {
-        max-height: auto; /* Ajusta el tamaño del logo */
+        max-height: 90px;
         width: auto;
-        margin-top: -125px;
+        margin-bottom: 3px;
     }
 
     .navbar-toggler {
         padding: 8px;
         border: none;
-        margin-top: -125px;
-        height: auto;
-        width: auto;
+        /* Removed margin-top: -125px and height/width: auto as they’re unnecessary */
     }
 
     .navbar-collapse {
-        background-color: white; /* Fondo blanco cuando se despliega */
+        background-color: white;
         padding: 10px;
-        margin-top: -155px;
+        margin-top: 0; /* Removed -155px to avoid pushing content out of view */
     }
 
     .navbar-nav {
-        background-color: white; /* Asegura que el fondo sea blanco */
+        background-color: white;
         padding: 10px;
         text-align: left;
     }
 
     .navbar-nav .nav-link {
-        color: #000 !important; /* Asegura que el texto sea negro */
+        color: #000 !important;
         font-weight: bold;
         padding: 10px;
     }
 
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link.active {
-        color: var(--bs-primary) !important; /* Aplica color primario al hover y activo en móvil */
+        color: var(--bs-primary) !important; /* Ensure --bs-primary is defined */
     }
 
     .navbar-nav .nav-item .dropdown-menu {
-        background-color: white; /* Evita que el dropdown tenga otro color */
+        background-color: white;
         border-radius: 0;
     }
 }
@@ -195,6 +194,17 @@ a{
     z-index: 1;
 }
 
+.hero-logo img {
+    max-width: 90%; /* puedes ajustar este valor */
+    height: auto;
+}
+
+.position-relative.d-flex.align-items-center.justify-content-start.h-100 {
+    justify-content: center !important; /* Centra horizontalmente */
+    align-items: center !important;     /* Centra verticalmente */
+    text-align: center;
+}
+
 .carousel-item video {
     position: absolute;
     top: 0;
@@ -203,6 +213,16 @@ a{
     height: 100%;
     object-fit: cover;
     z-index: -1; /* Envía el video al fondo */
+}
+
+.overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* cambia el 0.5 a 0.6, 0.7, etc. para más oscuridad */
+    z-index: 0;
 }
 
 .carousel-caption {
@@ -322,13 +342,15 @@ a{
     display: inline-flex;
     animation: scroll 30s linear infinite;
     min-width: 200%;
+    
 }
 
 .logos img {
-    height: 150px;
-    width: 150px;
+    height: 50px;
+    width: 50;
     margin: 0 15px;
 }
+
 
 @keyframes scroll {
     from {
@@ -789,7 +811,7 @@ a{
 /* Reducir el tamaño del logo de Ruska */
 .footer .logo {
     max-width: 100%; /* Ajustar tamaño del logo */
-    height: 150px;
+    height: auto;
 }
 
 /* Cada columna ocupa un tercio del espacio */
